@@ -12,10 +12,10 @@ class TPQueue {
   };
   Item* first;
   Item* last;
-  
+
  public:
     TPQueue(): first(nullptr), last(nullptr) {}
-    void push(const T& value){
+    void push(const T& value) {
       Item* temp = new Item;
       temp->item = value;
       temp->next = nullptr;
@@ -41,7 +41,7 @@ class TPQueue {
       i->next = temp;
       if (temp->next == nullptr)
       last = temp;
-      delete temp;  
+      delete temp;
     }
     const T pop() {
       Item* temp = first;
