@@ -12,20 +12,20 @@ class TPQueue {
   };
   Item* first;
   Item* last;
-    
+  
  public:
     TPQueue(): first(nullptr), last(nullptr) {}
     void push(const T& value){
       Item* temp = new Item;
       temp->item = value;
       temp->next = nullptr;
-      if (first==nullptr){ //Если один
+      if (first == nullptr) { //Если один
         first = temp;
         last = temp;
         delete temp;
         return;//закончили на этом
       }
-      if (last->item.prior < value.prior){
+      if (last->item.prior < value.prior) {
         temp->next = first;
         first = temp;
         delete temp;
@@ -39,11 +39,11 @@ class TPQueue {
       }
       temp->next = i->next;
       i->next = temp;
-      if (temp->naxt == nullptr)
+      if (temp->next == nullptr)
       last = temp;
       delete temp;  
     }
-    const T pop(){
+    const T pop() {
       Item* temp = first;
       T otv = temp->item;
       first = first->next;
