@@ -24,7 +24,7 @@ class TPQueue {
         last = temp;
         return;//закончили на этом
       }
-      if (last->item.prior < value.prior) {
+      if (first->item.prior < value.prior) {
         temp->next = first;
         first = temp;
         return;//и на этом закончили
