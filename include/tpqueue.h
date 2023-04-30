@@ -39,6 +39,7 @@ class TPQueue {
       i->next = temp;
       if (temp->next == nullptr)
       last = temp;
+      delete f;
     }
     const T pop() {
       Item* temp = first;
