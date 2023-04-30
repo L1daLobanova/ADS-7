@@ -22,13 +22,11 @@ class TPQueue {
       if (first == nullptr) { //Если один
         first = temp;
         last = temp;
-        delete temp;
         return;//закончили на этом
       }
       if (last->item.prior < value.prior) {
         temp->next = first;
         first = temp;
-        delete temp;
         return;//и на этом закончили
       }
       Item* i = first;
@@ -41,12 +39,12 @@ class TPQueue {
       i->next = temp;
       if (temp->next == nullptr)
       last = temp;
-      delete temp;
     }
     const T pop() {
       Item* temp = first;
       T otv = temp->item;
       first = first->next;
+      delete temp;
       return otv;
     }
 };
