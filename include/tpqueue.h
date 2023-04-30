@@ -30,16 +30,12 @@ class TPQueue {
         return;//и на этом закончили
       }
       Item* i = first;
-      bool f = i->next != nullptr && i->next->item.prior >= value.prior;
-      while (f) {
+      while (i->next != nullptr && i->next->item.prior >= value.prior)
         i = i->next;
-        f = i->next != nullptr && i->next->item.prior >= value.prior;
-      }
       temp->next = i->next;
       i->next = temp;
       if (temp->next == nullptr)
-      last = temp;
-      delete f;
+        last = temp;
     }
     const T pop() {
       Item* temp = first;
